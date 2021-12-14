@@ -7,17 +7,17 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Optional #2. Reversed digit");
-        Queue<Integer> fifo = new LinkedList<>();
+        Deque<Integer> queue = new ArrayDeque<>();
         System.out.println("Enter number:");
         int number = input.nextInt();
 
         while (number>0){
-            fifo.add(number%10);
+            queue.offer(number%10);
             number /= 10;
         }
 
         System.out.print("Reversed: ");
-        while (!fifo.isEmpty()){ System.out.print(fifo.poll()); }
+        while (!queue.isEmpty()){ System.out.print(queue.poll()); }
         System.out.println();
 
         System.out.println("Optional #4. Poem to the list");
